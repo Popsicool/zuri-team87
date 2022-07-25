@@ -1,1 +1,10 @@
 <h1>Team 87 Homepage</h1>
+
+{% if user.is_authenticated %}
+<h4>Welcome {{user.username}}</h4>
+<h3>View Your <a href="user/profile">Profile</a></h3>
+<a href="logout">Logout</a>
+{% else %}
+<p><a href="login">Login</a> to view your saved metadatas</p>
+<p><a href="register">Sign Up</a> if you don't have an account</p>
+{% endif %}
